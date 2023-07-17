@@ -15,20 +15,24 @@
 					<div class="card-body">
 						<form class="forms-sample" action="<?= base_url('Admin/cAnalisis/hitung') ?>" method="POST">
 							<?php
+							$bulan_max = $this->db->query("SELECT * FROM `penjualan` WHERE id_penjualan='" . $max->id_analisis . "'")->row();
 							$tot_penjualan = 0;
 							foreach ($nilai['tot_penjualan'] as $key => $value) {
 								$tot_penjualan += $value->tot_penjualan;
 							}
 							?>
-							<input type="hidden" name="nilai_xy" value="<?= $nilai['nilai_xy']->tot_xy ?>">
-							<input type="hidden" name="nilai_x2" value="<?= $nilai['nilai_x2']->tot_x2 ?>">
 							<div class="form-group">
 								<label for="exampleInputUsername1">Periode / Bulan</label><br>
-								<small class="text-warning">*Catatan : Bulan terakhir peramalan adalah Bulan <?= $max->bulan ?></small>
+								<small class="text-warning">*Catatan : Bulan terakhir peramalan adalah Bulan <?= $bulan_max->bulan ?></small>
 								<input type="text" class="form-control" name="periode" id="exampleInputUsername1" placeholder="Masukkan Periode/Bulan Analisis">
 								<?= form_error('periode', '<small class="text-danger">', '</small>'); ?>
 							</div>
 							<hr>
+							<div class="form-group">
+								<label for="exampleInputPassword1">Nilai Jumlah Penjualan</label>
+								<input type="text" class="form-control" name="penjualan" id="exampleInputPassword1" placeholder="Masukkan Penjualan">
+
+							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Nilai Jumlah Penjualan Sebelumnya</label>
 								<input type="text" class="form-control" value="<?= $tot_penjualan ?>" name="tot_penjualan" id="exampleInputPassword1" placeholder="Masukkan Tempat Lahir">

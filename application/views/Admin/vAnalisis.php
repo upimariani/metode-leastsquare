@@ -40,9 +40,8 @@
 										<th> # </th>
 										<th> Bulan </th>
 										<th> Penjualan </th>
-										<th> x </th>
-										<th> xy </th>
-										<th> x2 </th>
+										<th> Hasil Peramalan </th>
+										<th> GAP </th>
 										<th> Action </th>
 									</tr>
 								</thead>
@@ -55,16 +54,13 @@
 											<td><?= $no++ ?></td>
 											<td><?= $value->bulan ?></td>
 											<td><?= $value->tot_penjualan ?></td>
-											<td><?= $value->x ?></td>
-											<td><?= $value->xy ?></td>
-											<td><?= $value->x2 ?></td>
+											<td><?= $value->hasil ?></td>
+											<td><?= round($value->tot_penjualan / ($value->tot_penjualan + $value->hasil), 2) * 100 ?>%</td>
 
 											<td> <a href="<?= base_url('Admin/cAdmin/delete/' . $value->id_penjualan) ?>" class="btn btn-danger btn-icon-text">
 													<i class="mdi mdi-close-octagon"></i>
 												</a>
-												<a href="<?= base_url('Admin/cAdmin/update/' . $value->id_penjualan) ?>" class="btn btn-warning btn-icon-text">
-													<i class="mdi mdi-autorenew"></i>
-												</a>
+
 											</td>
 										</tr>
 									<?php

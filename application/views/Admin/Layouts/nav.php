@@ -15,7 +15,6 @@
 							</div>
 							<div class="profile-name">
 								<h5 class="mb-0 font-weight-normal">Admin</h5>
-								<span>Gold Member</span>
 							</div>
 						</div>
 
@@ -50,11 +49,11 @@
 					</a>
 				</li>
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="<?= base_url('Admin/cPenjualan') ?>">
+					<a class="nav-link" href="<?= base_url('cLogin/logout') ?>">
 						<span class="menu-icon">
-							<i class="mdi mdi-tag"></i>
+							<i class="mdi mdi-reload"></i>
 						</span>
-						<span class="menu-title">Analisis Penjualan</span>
+						<span class="menu-title">Logout</span>
 					</a>
 				</li>
 			</ul>
