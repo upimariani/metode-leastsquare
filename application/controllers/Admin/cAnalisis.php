@@ -145,6 +145,12 @@ class cAnalisis extends CI_Controller
 		// echo '<br>b: ' . $b;
 		// echo '<br>y: ' . $y;
 	}
+	public function delete($id)
+	{
+		$this->mAnalisis->delete($id);
+		$this->session->set_flashdata('success', 'Data Penjualan Berhasil Dihapus');
+		redirect('Admin/cAnalisis');
+	}
 }
 
 /* End of file cAnalisis.php */

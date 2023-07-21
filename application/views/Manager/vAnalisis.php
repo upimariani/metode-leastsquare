@@ -3,12 +3,7 @@
 		<div class="page-header">
 			<h3 class="page-title"> Analisis Peramalan Penjualan Metode Least Square </h3>
 
-			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Tables</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Basic tables</li>
-				</ol>
-			</nav>
+
 
 		</div>
 		<?php
@@ -22,8 +17,8 @@
 		?>
 
 		<div class="col-lg-4">
-			<a href="<?= base_url('Admin/cAnalisis/create') ?>" class="btn btn-warning btn-lg mb-3 btn-block">
-				<i class="mdi mdi-chart-areaspline"></i> Tambah Peramalan Bulan Berikutnya </a>
+			<button onclick="window.print()" class="btn btn-success mb-3 btn-block">
+				<i class="mdi mdi-chart-areaspline"></i> Print </button>
 		</div>
 
 		<div class="row">
@@ -42,7 +37,6 @@
 										<th> Penjualan </th>
 										<th> Hasil Peramalan </th>
 										<th> GAP </th>
-										<th> Action </th>
 									</tr>
 								</thead>
 								<tbody>
@@ -56,12 +50,6 @@
 											<td><?= $value->tot_penjualan ?></td>
 											<td><?= $value->hasil ?></td>
 											<td><?= round($value->tot_penjualan / ($value->tot_penjualan + $value->hasil), 2) * 100 ?>%</td>
-
-											<td> <a href="<?= base_url('Admin/cAnalisis/delete/' . $value->id_penjualan) ?>" class="btn btn-danger btn-icon-text">
-													<i class="mdi mdi-close-octagon"></i>
-												</a>
-
-											</td>
 										</tr>
 									<?php
 									}

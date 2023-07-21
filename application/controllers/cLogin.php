@@ -23,7 +23,11 @@ class cLogin extends CI_Controller
 			$password = $this->input->post('password');
 			$data = $this->mLogin->login($username, $password);
 			if ($data) {
-				redirect('Admin/cDashboard');
+				if ($data->hak_akses == '1') {
+					redirect('Admin/cDashboard');
+				} else {
+					redirect('Manager/cDashboard');
+				}
 			} else {
 				$this->session->set_flashdata('error', 'Username dan Password Anda Salah!!!');
 				redirect('', 'refresh');

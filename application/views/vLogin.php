@@ -5,7 +5,7 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Login User</title>
+	<title>Login User | PT. RIDIV MITRA</title>
 	<!-- plugins:css -->
 	<link rel="stylesheet" href="<?= base_url('asset/template/template/') ?>assets/vendors/mdi/css/materialdesignicons.min.css">
 	<link rel="stylesheet" href="<?= base_url('asset/template/template/') ?>assets/vendors/css/vendor.bundle.base.css">
@@ -48,7 +48,7 @@
 							?>
 							<form action="<?= base_url('cLogin') ?>" method="POST">
 								<div class="form-group">
-									<label>Username or email *</label>
+									<label>Username *</label>
 									<input type="text" name="username" class="form-control p_input">
 									<?= form_error('username', '<small class="text-danger">', '</small>') ?>
 								</div>

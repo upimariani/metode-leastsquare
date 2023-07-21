@@ -47,6 +47,12 @@ class mAnalisis extends CI_Model
 		$this->db->where('id_penjualan', $id);
 		$this->db->update('penjualan', $data);
 	}
+
+	public function delete($id)
+	{
+		$this->db->where('id_penjualan', $id);
+		$this->db->delete('penjualan');
+	}
 }
 
 /* End of file mAnalisis.php */

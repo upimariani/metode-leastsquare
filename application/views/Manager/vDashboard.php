@@ -9,7 +9,7 @@
 								<img src="<?= base_url('asset/template/template/') ?>assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
 							</div>
 							<div class="col-5 col-sm-7 col-xl-8 p-0">
-								<h4 class="mb-1 mb-sm-0">Selamat Datang Admin</h4>
+								<h4 class="mb-1 mb-sm-0">Selamat Datang Manager</h4>
 								<p class="mb-0 font-weight-normal d-none d-sm-block">PT. Ridiv Mitra Utama</p>
 							</div>
 
