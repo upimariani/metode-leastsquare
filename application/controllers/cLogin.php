@@ -25,8 +25,10 @@ class cLogin extends CI_Controller
 			if ($data) {
 				if ($data->hak_akses == '1') {
 					redirect('Admin/cDashboard');
-				} else {
+				} else if ($data->hak_akses == '2') {
 					redirect('Manager/cDashboard');
+				} else {
+					redirect('Marketing/cDashboard');
 				}
 			} else {
 				$this->session->set_flashdata('error', 'Username dan Password Anda Salah!!!');

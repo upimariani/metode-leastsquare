@@ -54,7 +54,7 @@
 								</div>
 								<div class="form-group">
 									<label>Password *</label>
-									<input type="text" name="password" class="form-control p_input">
+									<input type="password" name="password" class="form-control p_input">
 									<?= form_error('password', '<small class="text-danger">', '</small>') ?>
 								</div>
 								<div class="text-center">

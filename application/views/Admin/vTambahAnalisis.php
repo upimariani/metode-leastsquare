@@ -30,8 +30,8 @@
 							<hr>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Nilai Jumlah Penjualan</label>
-								<input type="text" class="form-control" name="penjualan" id="exampleInputPassword1" placeholder="Masukkan Penjualan">
-
+								<input type="text" class="form-control" name="penjualan" value="<?= $total_penjualan->total ?>" id="exampleInputPassword1" placeholder="Masukkan Penjualan">
+								<?= form_error('penjualan', '<small class="text-danger">', '</small>'); ?>
 							</div>
 							<div class="form-group">
 								<label for="exampleInputPassword1">Nilai Jumlah Penjualan Sebelumnya</label>

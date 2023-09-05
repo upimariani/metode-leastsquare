@@ -24,6 +24,11 @@ class mAnalisis extends CI_Model
 		return $this->db->query("SELECT MAX(id_penjualan) as id_analisis FROM `penjualan`")->row();
 	}
 
+	public function hasil_penjualan()
+	{
+		return $this->db->query("SELECT SUM(total) as total FROM `penjualan_harian` WHERE status='0'")->row();
+	}
+
 	//menampilkan data sebelumnya
 	public function nilai_analisis()
 	{

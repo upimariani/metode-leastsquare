@@ -71,8 +71,10 @@
 											<td>Username: <label class="badge badge-warning"><?= $value->username ?></label><br> Password: <label class="badge badge-danger"><?= $value->password ?></label></td>
 											<td><?php if ($value->hak_akses == '1') {
 													echo '<label class="badge badge-success">Admin</label>';
+												} else if ($value->hak_akses == '2') {
+													echo '<label class="badge badge-info">Manager</label>';
 												} else {
-													echo '<label class="badge badge-info">Manajer</label>';
+													echo '<label class="badge badge-danger">Marketing</label>';
 												} ?></td>
 											<td> <a href="<?= base_url('Admin/cAdmin/delete/' . $value->id_admin) ?>" class="btn btn-danger btn-icon-text">
 													<i class="mdi mdi-close-octagon"></i>
