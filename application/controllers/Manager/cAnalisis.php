@@ -18,6 +18,42 @@ class cAnalisis extends CI_Controller
 		$this->load->view('Manager/vAnalisis', $data);
 		$this->load->view('Manager/Layouts/footer');
 	}
+	public function cetak()
+	{
+		// memanggil library FPDF
+		require('asset/fpdf/fpdf.php');
+
+		// intance object dan memberikan pengaturan halaman PDF
+		$pdf = new FPDF('P', 'mm', 'A4');
+		$pdf->AddPage();
+
+		$pdf->SetFont('Times', 'B', 14);
+
+		$pdf->Cell(200, 40, 'LAPORAN HASIL ANALISIS', 0, 0, 'C');
+		$pdf->SetLineWidth(0);
+		$pdf->Cell(10, 30, '', 0, 1);
+		$pdf->SetFont('Times', 'B', 9);
+		$pdf->Cell(10, 7, 'No', 1, 0, 'C');
+		$pdf->Cell(50, 7, 'Periode / Bulan', 1, 0, 'C');
+		$pdf->Cell(50, 7, '	Total Penjualan', 1, 0, 'C');
+		$pdf->Cell(40, 7, 'Hasil', 1, 0, 'C');
+		$pdf->Cell(40, 7, 'GAP', 1, 0, 'C');
+
+
+		$pdf->Cell(10, 7, '', 0, 1);
+		$pdf->SetFont('Times', '', 10);
+		$no = 1;
+
+		$data = $this->mAnalisis->select();
+		foreach ($data as $key => $value) {
+			$pdf->Cell(10, 6, $no++, 1, 0, 'C');
+			$pdf->Cell(50, 6, $value->bulan, 1, 0);
+			$pdf->Cell(50, 6, $value->tot_penjualan, 1, 0);
+			$pdf->Cell(40, 6, $value->hasil, 1, 0);
+			$pdf->Cell(40, 6, round($value->tot_penjualan / ($value->tot_penjualan + $value->hasil), 2) * 100 . '%', 1, 1);
+		}
+		$pdf->Output();
+	}
 }
 
 /* End of file cAnalisis.php */

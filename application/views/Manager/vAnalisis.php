@@ -17,8 +17,8 @@
 		?>
 
 		<div class="col-lg-4">
-			<button onclick="window.print()" class="btn btn-success mb-3 btn-block">
-				<i class="mdi mdi-chart-areaspline"></i> Print </button>
+			<a href="<?= base_url('Manager/cAnalisis/cetak') ?>" class="btn btn-success mb-3 btn-block">
+				<i class="mdi mdi-chart-areaspline"></i> Print </a>
 		</div>
 
 		<div class="row">
