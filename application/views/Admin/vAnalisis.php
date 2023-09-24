@@ -34,13 +34,15 @@
 						<h4 class="card-title">Informasi Analisis Penjualan Metode Least Square</h4>
 						</p>
 						<div class="table-responsive">
-							<table class="table table-striped">
+							<table id="myTable" class="table table-light">
 								<thead>
 									<tr>
 										<th> # </th>
 										<th> Bulan </th>
 										<th> Penjualan </th>
 										<th> Hasil Peramalan </th>
+										<th> Nilai a </th>
+										<th> Nilai b </th>
 										<th> GAP </th>
 										<th> Action </th>
 									</tr>
@@ -54,8 +56,10 @@
 											<td><?= $no++ ?></td>
 											<td><?= $value->bulan ?></td>
 											<td><?= $value->tot_penjualan ?></td>
+											<td><?= $value->nilai_a ?></td>
+											<td><?= $value->nilai_b ?></td>
 											<td><?= $value->hasil ?></td>
-											<td><?= round((($value->hasil - $value->tot_penjualan) / $value->tot_penjualan) * 100, 2) ?>%</td>
+											<td><?= abs(round((($value->hasil - $value->tot_penjualan) / $value->tot_penjualan) * 100, 2)) ?>%</td>
 
 											<td> <a href="<?= base_url('Admin/cAnalisis/delete/' . $value->id_penjualan) ?>" class="btn btn-danger btn-icon-text">
 													<i class="mdi mdi-close-octagon"></i>

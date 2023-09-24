@@ -14,6 +14,8 @@
 				<div class="card">
 					<div class="card-body">
 						<form class="forms-sample" action="<?= base_url('Admin/cAnalisis/hitung') ?>" method="POST">
+							<input type="hidden" name="bulan" value="<?= $total_penjualan->periode_bulan ?>">
+							<input type="hidden" name="tahun" value="<?= $total_penjualan->periode_tahun ?>">
 							<?php
 							$bulan_max = $this->db->query("SELECT * FROM `penjualan` WHERE id_penjualan='" . $max->id_analisis . "'")->row();
 							$tot_penjualan = 0;

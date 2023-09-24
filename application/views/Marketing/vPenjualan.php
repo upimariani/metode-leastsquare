@@ -34,7 +34,7 @@
 						<h4 class="card-title">Informasi Penjualan Per Hari</h4>
 						</p>
 						<div class="table-responsive">
-							<table class="table table-striped">
+							<table id="myTable" class="table table-light">
 								<thead>
 									<tr>
 										<th> # </th>
@@ -53,10 +53,10 @@
 											<td><?= $no++ ?></td>
 											<td><?= $value->periode_hari ?></td>
 											<td><?= $value->total ?></td>
-											<td> <a href="<?= base_url('Admin/cAdmin/delete/' . $value->id_harian) ?>" class="btn btn-danger btn-icon-text">
+											<td> <a href="<?= base_url('Marketing/cPenjualanPerHari/delete/' . $value->id_harian) ?>" class="btn btn-danger btn-icon-text">
 													<i class="mdi mdi-close-octagon"></i>
 												</a>
-												<a href="<?= base_url('Admin/cAdmin/update/' . $value->id_harian) ?>" class="btn btn-warning btn-icon-text">
+												<a href="<?= base_url('Marketing/cPenjualanPerHari/update/' . $value->id_harian) ?>" class="btn btn-warning btn-icon-text">
 													<i class="mdi mdi-autorenew"></i>
 												</a>
 											</td>

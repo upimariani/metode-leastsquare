@@ -26,13 +26,11 @@
 								<input type="number" class="form-control" name="total" id="exampleInputPassword1" placeholder="Masukkan Total Penjualan">
 								<?= form_error('total', '<small class="text-danger">', '</small>'); ?>
 							</div>
-
-
 							<button type="submit" class="btn btn-primary mr-2">Save</button>
-							<button class="btn btn-dark">Cancel</button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>

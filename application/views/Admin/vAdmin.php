@@ -74,7 +74,7 @@
 												} else if ($value->hak_akses == '2') {
 													echo '<label class="badge badge-info">Manager</label>';
 												} else {
-													echo '<label class="badge badge-danger">Marketing</label>';
+													echo '<label class="badge badge-danger">Sales</label>';
 												} ?></td>
 											<td> <a href="<?= base_url('Admin/cAdmin/delete/' . $value->id_admin) ?>" class="btn btn-danger btn-icon-text">
 													<i class="mdi mdi-close-octagon"></i>

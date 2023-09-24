@@ -25,6 +25,14 @@
 <!-- Custom js for this page -->
 <script src="<?= base_url('asset/template/template/') ?>assets/js/dashboard.js"></script>
 <script src="<?= base_url('asset/chart/js_chart.js') ?>"></script>
+<link href="<?= base_url('asset/') ?>DataTable/datatables.min.css" rel="stylesheet">
+
+<script src="<?= base_url('asset/') ?>DataTable/datatables.min.js"></script>
+<script>
+	$('#myTable').DataTable({
+		select: true
+	});
+</script>
 <script>
 	<?php
 	$transaksi = $this->db->query("SELECT * FROM `penjualan`")->result();

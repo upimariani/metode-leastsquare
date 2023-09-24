@@ -26,7 +26,7 @@ class mAnalisis extends CI_Model
 
 	public function hasil_penjualan()
 	{
-		return $this->db->query("SELECT SUM(total) as total FROM `penjualan_harian` WHERE status='0'")->row();
+		return $this->db->query("SELECT SUM(total) as total, periode_bulan, periode_tahun FROM `penjualan_harian` WHERE status='0'")->row();
 	}
 
 	//menampilkan data sebelumnya

@@ -14,7 +14,7 @@
 								<span class="count bg-success"></span>
 							</div>
 							<div class="profile-name">
-								<h5 class="mb-0 font-weight-normal">Marketing</h5>
+								<h5 class="mb-0 font-weight-normal">Sales</h5>
 							</div>
 						</div>
 

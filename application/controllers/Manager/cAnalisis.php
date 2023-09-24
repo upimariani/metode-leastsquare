@@ -50,7 +50,7 @@ class cAnalisis extends CI_Controller
 			$pdf->Cell(50, 6, $value->bulan, 1, 0);
 			$pdf->Cell(50, 6, $value->tot_penjualan, 1, 0);
 			$pdf->Cell(40, 6, $value->hasil, 1, 0);
-			$pdf->Cell(40, 6, round($value->tot_penjualan / ($value->tot_penjualan + $value->hasil), 2) * 100 . '%', 1, 1);
+			$pdf->Cell(40, 6, abs(round((($value->hasil - $value->tot_penjualan) / $value->tot_penjualan) * 100, 2)) . '%', 1, 1);
 		}
 		$pdf->Output();
 	}

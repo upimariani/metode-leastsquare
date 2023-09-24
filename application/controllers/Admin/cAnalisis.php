@@ -80,9 +80,6 @@ class cAnalisis extends CI_Controller
 				}
 			}
 
-
-
-
 			$z = 0;
 			$i = 0;
 			$s = 0;
@@ -147,10 +144,14 @@ class cAnalisis extends CI_Controller
 
 			$data_insert = array(
 				'bulan' => $periode,
+				'periode' => $this->input->post('bulan'),
+				'periode_tahun' => $this->input->post('tahun'),
 				'tot_penjualan' => $penjualan_next,
 				'x' => $max_x,
 				'xy' => $xy_next,
 				'x2' => $x2_next,
+				'nilai_a' => $a,
+				'nilai_b' => $b,
 				'hasil' => $y
 			);
 			$this->mAnalisis->hasil($data_insert);

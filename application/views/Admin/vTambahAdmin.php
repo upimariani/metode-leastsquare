@@ -60,7 +60,7 @@
 									<option value="">---Pilih Hak Akses---</option>
 									<option value="1">Admin</option>
 									<option value="2">Manager</option>
-									<option value="3">Marketing</option>
+									<option value="3">Sales</option>
 								</select>
 								<?= form_error('hak_akses', '<small class="text-danger">', '</small>'); ?>
 							</div>

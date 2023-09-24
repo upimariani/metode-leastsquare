@@ -42,6 +42,14 @@
 					</a>
 				</li>
 				<li class="nav-item menu-items">
+					<a class="nav-link" href="<?= base_url('Manager/cCetakPenjualan') ?>">
+						<span class="menu-icon">
+							<i class="mdi mdi-book"></i>
+						</span>
+						<span class="menu-title">Penjualan Per Periode</span>
+					</a>
+				</li>
+				<li class="nav-item menu-items">
 					<a class="nav-link" href="<?= base_url('cLogin/logout') ?>">
 						<span class="menu-icon">
 							<i class="mdi mdi-reload"></i>
