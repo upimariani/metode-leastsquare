@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Sep 2023 pada 16.02
--- Versi server: 10.4.6-MariaDB
--- Versi PHP: 7.3.9
+-- Generation Time: Sep 29, 2023 at 03:20 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -41,18 +41,18 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `nama`, `jk`, `ttl_tempat`, `ttl_tgl`, `alamat`, `username`, `password`, `hak_akses`) VALUES
 (1, 'Admin', 'Perempuan', 'Kuningan', '2023-06-07', 'Alamat kuningan RT. 08 RW. 3', 'admin', 'admin', 1),
 (2, 'Manager', 'Laki - Laki', 'Kuningan', '2023-05-30', 'Alamat kuningan RT. 08 RW. 3', 'manajer', 'manajer', 2),
-(4, 'Marketing', 'Laki - Laki', 'Kuningan', '2009-05-04', 'Kuningan, Jawa Barat', 'marketing', 'marketing', 3);
+(4, 'Sales', 'Laki - Laki', 'Kuningan', '2009-05-04', 'Kuningan, Jawa Barat', 'sales', 'sales', 3);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penjualan`
+-- Table structure for table `penjualan`
 --
 
 CREATE TABLE `penjualan` (
@@ -70,51 +70,52 @@ CREATE TABLE `penjualan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `penjualan`
+-- Dumping data for table `penjualan`
 --
 
 INSERT INTO `penjualan` (`id_penjualan`, `bulan`, `periode`, `periode_tahun`, `tot_penjualan`, `x`, `xy`, `x2`, `nilai_a`, `nilai_b`, `hasil`) VALUES
-(1, 'Januari 2020', '1', 2020, 117658, -17, -1548962, 289, 117309, -5981, 218998),
-(2, 'Februari 2020', '2', 2020, 91115, -16, -1596339, 256, 108577, -6056, 205482),
-(3, 'Maret 2020', '3', 2020, 99771, -15, -1160984, 225, 106376, -5872, 194458),
-(4, 'April 2020', '4', 2020, 77399, -14, -1596209, 196, 100580, -6217, 187623),
-(5, 'Mei 2020', '5', 2020, 114015, -13, -1071845, 169, 102819, -6231, 183832),
-(6, 'Juni 2020', '6', 2020, 82450, -12, -1213874, 144, 99909, -6429, 177060),
-(7, 'Juli 2020', '7', 2020, 101156, -11, -1329660, 121, 100065, -6749, 174307),
-(8, 'Agustus 2020', '8', 2020, 120878, -10, -1260686, 100, 102378, -7070, 173081),
-(9, 'September 2020', '9', 2020, 126069, -9, -1272838, 81, 104747, -7437, 171688),
-(10, 'Oktober 2020', '10', 2020, 141426, -8, -862252, 64, 108081, -7634, 169154),
-(11, 'November 2020', '11', 2020, 107782, -7, -696151, 49, 108056, -7793, 162612),
-(12, 'Desember 2020', '12', 2020, 99450, -6, -644486, 36, 107394, -7970, 155219),
-(13, 'Januari 2021', '1', 2021, 107414, -5, -421629, 25, 107395, -8077, 147784),
-(14, 'Februari 2021', '2', 2021, 84326, -4, -448082, 16, 105857, -8229, 138777),
-(15, 'Maret 2021', '3', 2021, 112021, -3, -370375, 9, 106243, -8370, 131355),
-(16, 'April 2021', '4', 2021, 123458, -2, -303500, 4, 107255, -8498, 124253),
-(17, 'Mei 2021', '5', 2021, 151750, -1, -136305, 1, 109727, -8559, 118287),
-(18, 'Juni 2021', '6', 2021, 136305, 0, 0, 0, 111126, -8559, 111126),
-(19, 'Juli 2021', '7', 2021, 97726, 1, 62876, 1, 110456, -8525, 101930),
-(20, 'Agustus 2021', '8', 2021, 62876, 2, 156794, 4, 108190, -8435, 91320),
-(21, 'September 2021', '9', 2021, 78397, 3, 222521, 9, 106836, -8294, 81952),
-(22, 'Oktober 2021', '10', 2021, 74174, 4, 345733, 16, 105416, -8071, 73131),
-(23, 'November 2021', '11', 2021, 86433, 5, 266597, 25, 104625, -7854, 65352),
-(24, 'Desember 2021', '12', 2021, 53319, 6, 452570, 36, 102573, -7520, 57450),
-(25, 'Januari 2022', '1', 2022, 75428, 7, 443654, 49, 101529, -7159, 51414),
-(26, 'Februari 2022', '2', 2022, 63379, 8, 881669, 64, 100116, -6580, 47475),
-(27, 'Maret 2022', '3', 2022, 110209, 9, 845638, 81, 100476, -6004, 46439),
-(28, 'April 2022', '4', 2022, 93960, 10, 1186172, 100, 100251, -5287, 47373),
-(29, 'Mei 2022', '5', 2022, 118617, 11, 1357754, 121, 100864, -4523, 51100),
-(30, 'Juni 2022', '6', 2022, 123432, 12, 1354775, 144, 101592, -3796, 56030),
-(31, 'Juli 2022', '7', 2022, 112898, 13, 1928212, 169, 101945, -2919, 63997),
-(32, 'Agustus 2022', '8', 2022, 148324, 14, 1506673, 196, 103350, -2253, 71799),
-(33, 'September 2022', '9', 2022, 107620, 15, 2026035, 225, 103476, -1497, 81017),
-(34, 'Oktober 2022', '10', 2022, 135069, 16, 1035718, 256, 104378, -1103, 86720),
-(35, 'November 2022', '11', 2022, 64732, 17, 1801306, 289, 103277, -559, 93772),
-(36, 'Desember 2022', '12', 2022, 45231, 18, 814158, 324, 101708, -323, 95891);
+(1, 'Januari 2020', '1', 2020, 117658, -18, -2117844, 324, 117309, -5981, 218998),
+(2, 'Februari 2020', '2', 2020, 91115, -17, -1548955, 289, 108577, -6056, 205482),
+(3, 'Maret 2020', '3', 2020, 99771, -16, -1596336, 256, 106376, -5872, 194458),
+(4, 'April 2020', '4', 2020, 77399, -15, -1160985, 225, 100580, -6217, 187623),
+(5, 'Mei 2020', '5', 2020, 114015, -14, -1596210, 196, 102819, -6231, 183832),
+(6, 'Juni 2020', '6', 2020, 82450, -13, -1071850, 169, 99909, -6429, 177060),
+(7, 'Juli 2020', '7', 2020, 101156, -12, -1213872, 144, 100065, -6749, 174307),
+(8, 'Agustus 2020', '8', 2020, 120878, -11, -1329658, 121, 102378, -7070, 173081),
+(9, 'September 2020', '9', 2020, 126069, -10, -1260690, 100, 104747, -7437, 171688),
+(10, 'Oktober 2020', '10', 2020, 141426, -9, -1272834, 81, 108081, -7634, 169154),
+(11, 'November 2020', '11', 2020, 107782, -8, -862256, 64, 108056, -7793, 162612),
+(12, 'Desember 2020', '12', 2020, 99450, -7, -696150, 49, 107394, -7970, 155219),
+(13, 'Januari 2021', '1', 2021, 107414, -6, -644484, 36, 107395, -8077, 147784),
+(14, 'Februari 2021', '2', 2021, 84326, -5, -421630, 25, 105857, -8229, 138777),
+(15, 'Maret 2021', '3', 2021, 112021, -4, -448084, 16, 106243, -8370, 131355),
+(16, 'April 2021', '4', 2021, 123458, -3, -370374, 9, 107255, -8498, 124253),
+(17, 'Mei 2021', '5', 2021, 151750, -2, -303500, 4, 109727, -8559, 118287),
+(18, 'Juni 2021', '6', 2021, 136305, -1, -136305, 1, 111126, -8559, 111126),
+(19, 'Juli 2021', '7', 2021, 97726, 0, 0, 0, 110456, -8525, 101930),
+(20, 'Agustus 2021', '8', 2021, 62876, 1, 62876, 1, 108190, -8435, 91320),
+(21, 'September 2021', '9', 2021, 78397, 2, 156794, 4, 106836, -8294, 81952),
+(22, 'Oktober 2021', '10', 2021, 74174, 3, 222522, 9, 105416, -8071, 73131),
+(23, 'November 2021', '11', 2021, 86433, 4, 345732, 16, 104625, -7854, 65352),
+(24, 'Desember 2021', '12', 2021, 53319, 5, 266595, 25, 102573, -7520, 57450),
+(26, 'Februari 2022', '2', 2022, 63379, 6, 380274, 36, 100116, -6580, 47475),
+(27, 'Maret 2022', '3', 2022, 110209, 7, 771463, 49, 100476, -6004, 46439),
+(28, 'April 2022', '4', 2022, 93960, 8, 751680, 64, 100251, -5287, 47373),
+(29, 'Mei 2022', '5', 2022, 118617, 9, 1067553, 81, 100864, -4523, 51100),
+(30, 'Juni 2022', '6', 2022, 123432, 10, 1234320, 100, 101592, -3796, 56030),
+(31, 'Juli 2022', '7', 2022, 112898, 11, 1241878, 121, 101945, -2919, 63997),
+(32, 'Agustus 2022', '8', 2022, 148324, 12, 1779888, 144, 103350, -2253, 71799),
+(33, 'September 2022', '9', 2022, 107620, 13, 1399060, 169, 103476, -1497, 81017),
+(34, 'Oktober 2022', '10', 2022, 135069, 14, 1890966, 196, 104378, -1103, 86720),
+(35, 'November 2022', '11', 2022, 64732, 15, 970980, 225, 103277, -559, 93772),
+(36, 'Desember 2022', '12', 2022, 45231, 16, 723696, 256, 101708, -323, 95891),
+(39, 'Januari 2023', '1', 2023, 1300, 18, 23400, 324, 99226.083, -1134.599, 78803),
+(41, 'Februari 2023', '', 0, NULL, 0, 0, 0, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `penjualan_harian`
+-- Table structure for table `penjualan_harian`
 --
 
 CREATE TABLE `penjualan_harian` (
@@ -127,7 +128,7 @@ CREATE TABLE `penjualan_harian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `penjualan_harian`
+-- Dumping data for table `penjualan_harian`
 --
 
 INSERT INTO `penjualan_harian` (`id_harian`, `periode_hari`, `periode_bulan`, `periode_tahun`, `total`, `status`) VALUES
@@ -2799,49 +2800,49 @@ INSERT INTO `penjualan_harian` (`id_harian`, `periode_hari`, `periode_bulan`, `p
 (2664, '2022-12-26', 12, '2022', 2800, 1),
 (2665, '2022-12-30', 12, '2022', 1180, 1),
 (2666, '2022-12-30', 12, '2022', 1963, 1),
-(2667, '2023-09-19', 9, '2023', 1250, 0),
-(2668, '2023-09-24', 9, '2023', 50, 0);
+(2667, '2023-01-19', 1, '2023', 1250, 1),
+(2668, '2023-01-24', 1, '2023', 50, 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `penjualan`
+-- Indexes for table `penjualan`
 --
 ALTER TABLE `penjualan`
   ADD PRIMARY KEY (`id_penjualan`);
 
 --
--- Indeks untuk tabel `penjualan_harian`
+-- Indexes for table `penjualan_harian`
 --
 ALTER TABLE `penjualan_harian`
   ADD PRIMARY KEY (`id_harian`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `penjualan`
+-- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- AUTO_INCREMENT untuk tabel `penjualan_harian`
+-- AUTO_INCREMENT for table `penjualan_harian`
 --
 ALTER TABLE `penjualan_harian`
   MODIFY `id_harian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2669;

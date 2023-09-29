@@ -11,7 +11,7 @@ class cAnalisis extends CI_Controller
 	public function index()
 	{
 		$data = array(
-			'penjualan' => $this->mAnalisis->select()
+			'penjualan' => $this->mAnalisis->hasil_peramalan()
 		);
 		$this->load->view('Manager/Layouts/head');
 		$this->load->view('Manager/Layouts/nav');
@@ -44,7 +44,7 @@ class cAnalisis extends CI_Controller
 		$pdf->SetFont('Times', '', 10);
 		$no = 1;
 
-		$data = $this->mAnalisis->select();
+		$data = $this->mAnalisis->hasil_peramalan();
 		foreach ($data as $key => $value) {
 			$pdf->Cell(10, 6, $no++, 1, 0, 'C');
 			$pdf->Cell(50, 6, $value->bulan, 1, 0);

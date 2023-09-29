@@ -8,13 +8,14 @@ class cAnalisis extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('mAnalisis');
+		$this->load->model('mPenjualan');
 	}
 
 
 	public function index()
 	{
 		$data = array(
-			'penjualan' => $this->mAnalisis->select()
+			'peramalan' => $this->mAnalisis->select()
 		);
 		$this->load->view('Admin/Layouts/head');
 		$this->load->view('Admin/Layouts/nav');
@@ -36,12 +37,14 @@ class cAnalisis extends CI_Controller
 	public function hitung()
 	{
 		$this->form_validation->set_rules('periode', 'Periode', 'required');
+		$this->form_validation->set_rules('periode_berikutnya', 'Periode Berikutnya', 'required');
 		$this->form_validation->set_rules('penjualan', 'Penjualan', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(
 				'max' => $this->mAnalisis->max_bulan_peramalan(),
-				'nilai' => $this->mAnalisis->nilai_analisis()
+				'nilai' => $this->mAnalisis->nilai_analisis(),
+				'total_penjualan' => $this->mAnalisis->hasil_penjualan()
 			);
 			$this->load->view('Admin/Layouts/head');
 			$this->load->view('Admin/Layouts/nav');
@@ -142,11 +145,10 @@ class cAnalisis extends CI_Controller
 			$y = round($a + ($b * $max_x));
 
 
-			$data_insert = array(
-				'bulan' => $periode,
+			$data_peramalan = array(
 				'periode' => $this->input->post('bulan'),
 				'periode_tahun' => $this->input->post('tahun'),
-				'tot_penjualan' => $penjualan_next,
+				'tot_penjualan' => $this->input->post('penjualan'),
 				'x' => $max_x,
 				'xy' => $xy_next,
 				'x2' => $x2_next,
@@ -154,7 +156,14 @@ class cAnalisis extends CI_Controller
 				'nilai_b' => $b,
 				'hasil' => $y
 			);
-			$this->mAnalisis->hasil($data_insert);
+			$this->db->where('bulan', $periode);
+			$this->db->update('penjualan', $data_peramalan);
+
+			$data_bulan_berikutnya = array(
+				'bulan' => $this->input->post('periode_berikutnya')
+			);
+			$this->mAnalisis->hasil($data_bulan_berikutnya);
+
 
 
 			$data_status = array(
@@ -173,6 +182,16 @@ class cAnalisis extends CI_Controller
 		$this->mAnalisis->delete($id);
 		$this->session->set_flashdata('success', 'Data Penjualan Berhasil Dihapus');
 		redirect('Admin/cAnalisis');
+	}
+	public function list_perhari($bulan, $tahun)
+	{
+		$data = array(
+			'penjualan' => $this->mPenjualan->select($bulan, $tahun)
+		);
+		$this->load->view('Admin/Layouts/head');
+		$this->load->view('Admin/Layouts/nav');
+		$this->load->view('Admin/vPenjualanPerHari', $data);
+		$this->load->view('Admin/Layouts/footer');
 	}
 }
 

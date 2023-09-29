@@ -22,12 +22,18 @@
 							foreach ($nilai['tot_penjualan'] as $key => $value) {
 								$tot_penjualan += $value->tot_penjualan;
 							}
+							$bulan_peramalan = $this->db->query("SELECT * FROM `penjualan` WHERE nilai_b= '0'")->row();
 							?>
 							<div class="form-group">
-								<label for="exampleInputUsername1">Periode / Bulan</label><br>
-								<small class="text-warning">*Catatan : Bulan terakhir peramalan adalah Bulan <?= $bulan_max->bulan ?></small>
-								<input type="text" class="form-control" name="periode" id="exampleInputUsername1" placeholder="Masukkan Periode/Bulan Analisis">
+								<label for="exampleInputUsername1">Periode / Bulan Sekarang</label><br>
+								<input type="text" class="form-control" value="<?= $bulan_peramalan->bulan ?>" name="periode" id="exampleInputUsername1" placeholder="Masukkan Periode/Bulan Analisis">
 								<?= form_error('periode', '<small class="text-danger">', '</small>'); ?>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputUsername1">Periode / Bulan Berikutnya</label><br>
+								<small class="text-warning">*Catatan : Bulan terakhir peramalan adalah Bulan <?= $bulan_max->bulan ?></small>
+								<input type="text" class="form-control" name="periode_berikutnya" id="exampleInputUsername1" placeholder="Masukkan Periode Berikutnya/Bulan Analisis">
+								<?= form_error('periode_berikutnya', '<small class="text-danger">', '</small>'); ?>
 							</div>
 							<hr>
 							<div class="form-group">
@@ -40,11 +46,11 @@
 								<input type="text" class="form-control" value="<?= $tot_penjualan ?>" name="tot_penjualan" id="exampleInputPassword1" placeholder="Masukkan Tempat Lahir">
 
 							</div>
-							<div class="form-group">
-								<label for="exampleInputPassword1">Nilai Jumlah Periode</label>
-								<input type="text" class="form-control" value="<?= $nilai['nilai_tengah']->jml ?>" name="nilai_tengah" id="exampleInputPassword1" placeholder="Masukkan Alamat">
+							<!-- <div class="form-group">
+								<label for="exampleInputPassword1">Nilai Jumlah Periode</label> -->
+							<input type="hidden" class="form-control" value="<?= $nilai['nilai_tengah']->jml ?>" name="nilai_tengah" id="exampleInputPassword1" placeholder="Masukkan Alamat">
 
-							</div>
+							<!-- </div> -->
 
 
 							<button type="submit" class="btn btn-warning mr-2">Hitung Analisis</button>

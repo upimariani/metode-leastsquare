@@ -70,7 +70,7 @@
 														} ?>>Manager</option>
 									<option value="3" <?php if ($admin->hak_akses == '3') {
 															echo 'selected';
-														} ?>>Marketing</option>
+														} ?>>Sales</option>
 								</select>
 								<?= form_error('hak_akses', '<small class="text-danger">', '</small>'); ?>
 							</div>

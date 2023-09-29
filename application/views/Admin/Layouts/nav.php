@@ -49,6 +49,14 @@
 					</a>
 				</li>
 				<li class="nav-item menu-items">
+					<a class="nav-link" href="<?= base_url('Admin/cHasilPenjualan') ?>">
+						<span class="menu-icon">
+							<i class="mdi mdi-tag"></i>
+						</span>
+						<span class="menu-title">Hasil Penjualan</span>
+					</a>
+				</li>
+				<li class="nav-item menu-items">
 					<a class="nav-link" href="<?= base_url('cLogin/logout') ?>">
 						<span class="menu-icon">
 							<i class="mdi mdi-reload"></i>

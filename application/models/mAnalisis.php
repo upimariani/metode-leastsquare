@@ -7,12 +7,20 @@ class mAnalisis extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('penjualan');
+		$this->db->where('tot_penjualan', NULL);
+		return $this->db->get()->result();
+	}
+	public function hasil_peramalan()
+	{
+		$this->db->select('*');
+		$this->db->from('penjualan');
+		$this->db->where('nilai_b!=0');
 		return $this->db->get()->result();
 	}
 
 
 	//penjualan
-	public function penjualan()
+	public function peramalan()
 	{
 		$this->db->select('*');
 		$this->db->from('penjualan');

@@ -52,12 +52,18 @@ class cCetakPenjualan extends CI_Controller
 		$pdf->SetFont('Times', '', 10);
 		$no = 1;
 
+		$jumlah = 0;
 		$data = $this->mPenjualan->select($bulan, $tahun);
 		foreach ($data as $key => $value) {
+			$jumlah += $value->total;
 			$pdf->Cell(10, 6, $no++, 1, 0, 'C');
 			$pdf->Cell(50, 6, $value->periode_hari, 1, 0);
 			$pdf->Cell(50, 6, $value->total, 1, 1);
 		}
+
+		$pdf->SetFont('Times', 'B', 14);
+		$pdf->Cell(60, 6, 'Jumlah Penjualan', 1, 0);
+		$pdf->Cell(50, 6, $jumlah, 1, 0);
 		$pdf->Output();
 	}
 }

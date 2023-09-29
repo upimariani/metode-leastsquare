@@ -21,10 +21,7 @@
 		}
 		?>
 
-		<div class="col-lg-4">
-			<a href="<?= base_url('Admin/cAnalisis/create') ?>" class="btn btn-warning btn-lg mb-3 btn-block">
-				<i class="mdi mdi-chart-areaspline"></i> Tambah Peramalan Bulan Berikutnya </a>
-		</div>
+
 
 		<div class="row">
 
@@ -39,28 +36,34 @@
 									<tr>
 										<th> # </th>
 										<th> Bulan </th>
+										<th> Penjualan </th>
+										<th> Hasil Peramalan </th>
 										<th> Nilai a </th>
 										<th> Nilai b </th>
-										<th> Hasil Peramalan </th>
+										<th> GAP </th>
 										<th> Action </th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php
 									$no = 1;
-									foreach ($peramalan as $key => $value) {
-										$peramalan = $this->db->query("SELECT * FROM `penjualan` WHERE tot_penjualan != 'NULL' ORDER BY id_penjualan DESC LIMIT 1")->row();
+									foreach ($hasil_peramalan as $key => $value) {
 									?>
 										<tr>
 											<td><?= $no++ ?></td>
 											<td><?= $value->bulan ?></td>
-											<td><?= $peramalan->nilai_a ?></td>
-											<td><?= $peramalan->nilai_b ?></td>
-											<td><?= $peramalan->hasil ?></td>
+											<td><?= $value->tot_penjualan ?></td>
+											<td><?= $value->nilai_a ?></td>
+											<td><?= $value->nilai_b ?></td>
+											<td><?= $value->hasil ?></td>
+											<td><?= abs(round((($value->hasil - $value->tot_penjualan) / $value->tot_penjualan) * 100, 2)) ?>%</td>
+
 											<td> <a href="<?= base_url('Admin/cAnalisis/delete/' . $value->id_penjualan) ?>" class="btn btn-danger btn-icon-text">
 													<i class="mdi mdi-close-octagon"></i>
 												</a>
-
+												<a href="<?= base_url('Admin/cAnalisis/list_perhari/' . $value->periode . '/' . $value->periode_tahun) ?>" class="btn btn-warning btn-icon-text">
+													<i class="mdi mdi-autorenew"></i>
+												</a>
 											</td>
 										</tr>
 									<?php
