@@ -41,8 +41,7 @@
 										<th> Bulan </th>
 										<th> Nilai a </th>
 										<th> Nilai b </th>
-										<th> Hasil Peramalan </th>
-										<th> Action </th>
+										<th> Hasil Peramalan/kg </th>
 									</tr>
 								</thead>
 								<tbody>
@@ -57,11 +56,7 @@
 											<td><?= $peramalan->nilai_a ?></td>
 											<td><?= $peramalan->nilai_b ?></td>
 											<td><?= $peramalan->hasil ?></td>
-											<td> <a href="<?= base_url('Admin/cAnalisis/delete/' . $value->id_penjualan) ?>" class="btn btn-danger btn-icon-text">
-													<i class="mdi mdi-close-octagon"></i>
-												</a>
 
-											</td>
 										</tr>
 									<?php
 									}

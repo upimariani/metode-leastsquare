@@ -36,7 +36,7 @@
 									<tr>
 										<th> # </th>
 										<th> Periode Hari </th>
-										<th> Total Penjualan </th>
+										<th> Total Penjualan /kg </th>
 									</tr>
 								</thead>
 								<tbody>

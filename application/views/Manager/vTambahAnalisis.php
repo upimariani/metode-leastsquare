@@ -13,7 +13,7 @@
 			<div class="col-md-6 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
-						<form class="forms-sample" action="<?= base_url('Admin/cAnalisis/hitung') ?>" method="POST">
+						<form class="forms-sample" action="<?= base_url('Manager/cAnalisis/hitung') ?>" method="POST">
 							<input type="hidden" name="bulan" value="<?= $total_penjualan->periode_bulan ?>">
 							<input type="hidden" name="tahun" value="<?= $total_penjualan->periode_tahun ?>">
 							<?php

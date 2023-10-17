@@ -39,7 +39,7 @@
 									<tr>
 										<th> # </th>
 										<th> Bulan </th>
-										<th> Penjualan </th>
+										<th> Penjualan /kg </th>
 										<th> x </th>
 										<th> xy </th>
 										<th> x2 </th>

@@ -24,6 +24,7 @@
 		<div class="row">
 
 			<div class="col-lg-12 grid-margin stretch-card">
+
 				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title">Informasi Analisis Penjualan Metode Least Square</h4>
@@ -34,11 +35,11 @@
 									<tr>
 										<th> # </th>
 										<th> Bulan </th>
-										<th> Penjualan </th>
-										<th> Hasil Peramalan </th>
+										<th> Penjualan /kg </th>
+
 										<th> Nilai a </th>
 										<th> Nilai b </th>
-										<th> GAP </th>
+										<th> Hasil Peramalan /kg </th>
 									</tr>
 								</thead>
 								<tbody>
@@ -53,7 +54,6 @@
 											<td><?= $value->nilai_a ?></td>
 											<td><?= $value->nilai_b ?></td>
 											<td><?= $value->hasil ?></td>
-											<td><?= abs(round((($value->hasil - $value->tot_penjualan) / $value->tot_penjualan) * 100, 2)) ?>%</td>
 
 										</tr>
 									<?php

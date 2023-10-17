@@ -67,7 +67,6 @@ class cAnalisis extends CI_Controller
 			// echo $jml_data;
 			// echo $nilai_tengah;
 			// echo '<br>';
-
 			$x = array();
 			if ($status == 'ganjil') {
 				for ($i = -$nilai_tengah; $i <= $nilai_tengah; $i++) {
