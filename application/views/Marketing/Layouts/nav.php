@@ -1,71 +1,54 @@
-<body>
-	<div class="container-scroller">
-		<!-- partial:partials/_sidebar.html -->
-		<nav class="sidebar sidebar-offcanvas" id="sidebar">
-			<div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-				<img style="width: 150px;" src="<?= base_url('asset/logo.jpg') ?>" alt="logo" />
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-light-info elevation-4">
+	<!-- Brand Logo -->
+	<a href="index3.html" class="brand-link">
+		<span class="brand-text font-weight-light">PT. RIDIV MITRA UTAMA</span>
+	</a>
+
+	<!-- Sidebar -->
+	<div class="sidebar">
+		<!-- Sidebar user panel (optional) -->
+		<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+			<div class="image">
+				<img src="<?= base_url('asset/AdminLTE/') ?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
 			</div>
-			<ul class="nav">
-				<li class="nav-item profile">
-					<div class="profile-desc">
-						<div class="profile-pic">
-							<div class="count-indicator">
-								<img class="img-xs rounded-circle " src="<?= base_url('asset/template/template/') ?>assets/images/faces/face15.jpg" alt="">
-								<span class="count bg-success"></span>
-							</div>
-							<div class="profile-name">
-								<h5 class="mb-0 font-weight-normal">Sales</h5>
-							</div>
-						</div>
+			<div class="info">
+				<a href="#" class="d-block">Sales</a>
+			</div>
+		</div>
 
-					</div>
+		<!-- Sidebar Menu -->
+		<nav class="mt-2">
+			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+				<!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+				<li class="nav-item">
+					<a href="<?= base_url('Marketing/cDashboard') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Marketing' && $this->uri->segment(2) == 'cDashboard') {
+																							echo 'active';
+																						}  ?>">
+						<i class="nav-icon fas fa-tachometer-alt"></i>
+						<p>Dashboard</p>
+					</a>
 				</li>
-				<li class="nav-item nav-category">
-					<span class="nav-link">Navigation</span>
-				</li>
-				<li class="nav-item menu-items">
-					<a class="nav-link" href="<?= base_url('Marketing/cDashboard') ?>">
-						<span class="menu-icon">
-							<i class="mdi mdi-speedometer"></i>
-						</span>
-						<span class="menu-title">Dashboard</span>
+				<li class="nav-item">
+					<a href="<?= base_url('Marketing/cPenjualanPerHari') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'Marketing' && $this->uri->segment(2) == 'cPenjualanPerHari') {
+																									echo 'active';
+																								}  ?>">
+						<i class="nav-icon fas fa-tag"></i>
+						<p>Penjualan Per Hari</p>
 					</a>
 				</li>
 
-
-				<li class="nav-item menu-items">
-					<a class="nav-link" href="<?= base_url('Marketing/cPenjualanPerHari') ?>">
-						<span class="menu-icon">
-							<i class="mdi mdi-tag"></i>
-						</span>
-						<span class="menu-title">Penjualan Per Hari</span>
-					</a>
-				</li>
-				<li class="nav-item menu-items">
-					<a class="nav-link" href="<?= base_url('cLogin/logout') ?>">
-						<span class="menu-icon">
-							<i class="mdi mdi-reload"></i>
-						</span>
-						<span class="menu-title">Logout</span>
+				<li class="nav-item">
+					<a href="<?= base_url('cLogin/logout') ?>" class="nav-link">
+						<i class="nav-icon fas fa-sign-out-alt"></i>
+						<p>SignOut</p>
 					</a>
 				</li>
 			</ul>
 		</nav>
-		<!-- partial -->
-		<div class="container-fluid page-body-wrapper">
-			<!-- partial:partials/_navbar.html -->
-			<nav class="navbar p-0 fixed-top d-flex flex-row">
-				<div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-					<a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
-				</div>
-				<div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-					<button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-						<span class="mdi mdi-menu"></span>
-					</button>
-
-
-					<button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-						<span class="mdi mdi-format-line-spacing"></span>
-					</button>
-				</div>
-			</nav>
+		<!-- /.sidebar-menu -->
+	</div>
+	<!-- /.sidebar -->
+</aside>

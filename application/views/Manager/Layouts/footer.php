@@ -1,36 +1,62 @@
-<!-- partial -->
+<!-- /.content-wrapper -->
+<footer class="main-footer">
+	<strong>PT. RIDIV MITRA UTAMA</strong>
+</footer>
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+	<!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
-<!-- main-panel ends -->
-</div>
-<!-- page-body-wrapper ends -->
-</div>
-<!-- container-scroller -->
-<!-- plugins:js -->
-<script src="<?= base_url('asset/template/template/') ?>assets/vendors/js/vendor.bundle.base.js"></script>
-<!-- endinject -->
-<!-- Plugin js for this page -->
-<script src="<?= base_url('asset/template/template/') ?>assets/vendors/chart.js/Chart.min.js"></script>
-<script src="<?= base_url('asset/template/template/') ?>assets/vendors/progressbar.js/progressbar.min.js"></script>
-<script src="<?= base_url('asset/template/template/') ?>assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-<script src="<?= base_url('asset/template/template/') ?>assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<script src="<?= base_url('asset/template/template/') ?>assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
-<!-- End plugin js for this page -->
-<!-- inject:js -->
-<script src="<?= base_url('asset/template/template/') ?>assets/js/off-canvas.js"></script>
-<script src="<?= base_url('asset/template/template/') ?>assets/js/hoverable-collapse.js"></script>
-<script src="<?= base_url('asset/template/template/') ?>assets/js/misc.js"></script>
-<script src="<?= base_url('asset/template/template/') ?>assets/js/settings.js"></script>
-<script src="<?= base_url('asset/template/template/') ?>assets/js/todolist.js"></script>
-<!-- endinject -->
-<!-- Custom js for this page -->
-<script src="<?= base_url('asset/template/template/') ?>assets/js/dashboard.js"></script>
-<script src="<?= base_url('asset/chart/js_chart.js') ?>"></script>
-<link href="<?= base_url('asset/') ?>DataTable/datatables.min.css" rel="stylesheet">
+<!-- ./wrapper -->
 
-<script src="<?= base_url('asset/') ?>DataTable/datatables.min.js"></script>
+<!-- jQuery -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+	$.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/moment/moment.min.js"></script>
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?= base_url('asset/AdminLTE/') ?>dist/js/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="<?= base_url('asset/AdminLTE/') ?>dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?= base_url('asset/AdminLTE/') ?>dist/js/demo.js"></script>
+<!-- DataTables -->
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= base_url('asset/AdminLTE/') ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<!-- AdminLTE App -->
+<script src="<?= base_url('asset/AdminLTE/') ?>dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?= base_url('asset/AdminLTE/') ?>dist/js/demo.js"></script>
 <script>
 	$('#myTable').DataTable({
-		select: true
+		"responsive": true,
+		"autoWidth": false,
 	});
 </script>
 <script>
@@ -38,7 +64,6 @@
 	$transaksi = $this->db->query("SELECT * FROM `penjualan`")->result();
 
 	?>
-	Chart.defaults.global.defaultFontColor = 'white';
 	var xValues = [<?php foreach ($transaksi as $key => $value) {
 						echo '"' . $value->bulan . '",';
 					} ?>];

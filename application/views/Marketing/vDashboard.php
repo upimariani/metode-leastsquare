@@ -1,29 +1,62 @@
-<div class="main-panel">
-	<div class="content-wrapper">
-		<div class="row">
-			<div class="col-12 grid-margin stretch-card">
-				<div class="card corona-gradient-card">
-					<div class="card-body py-0 px-0 px-sm-3">
-						<div class="row align-items-center">
-							<div class="col-4 col-sm-3 col-xl-2">
-								<img src="<?= base_url('asset/template/template/') ?>assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
-							</div>
-							<div class="col-5 col-sm-7 col-xl-8 p-0">
-								<h4 class="mb-1 mb-sm-0">Selamat Datang Marketing</h4>
-								<p class="mb-0 font-weight-normal d-none d-sm-block">PT. Ridiv Mitra Utama</p>
-							</div>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<div class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+					<h1 class="m-0 text-dark">Dashboard Admin</h1>
+				</div><!-- /.col -->
+				<div class="col-sm-6">
+					<ol class="breadcrumb float-sm-right">
+						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item active">Dashboard</li>
+					</ol>
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		</div><!-- /.container-fluid -->
+	</div>
+	<!-- /.content-header -->
 
+	<!-- Main content -->
+	<section class="content">
+		<div class="container-fluid">
+			<!-- Small boxes (Stat box) -->
+			<div class="row">
+				<?php
+				if ($this->session->userdata('error')) {
+				?>
+					<div class="alert alert-danger" role="alert">
+						<?= $this->session->userdata('error') ?>
+					</div>
+				<?php
+				}
+				?>
+
+
+				<div class="col-lg-8">
+					<div class="card">
+						<div class="card-header">
+							<h4>Grafik Penjualan</h4>
+						</div>
+						<div class="card-body">
+							<canvas id="transaksi" style="height: 150px;"></canvas>
 						</div>
 					</div>
-
 				</div>
+
+
+
+
+
+
 			</div>
-		</div>
-		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tm-block-col">
-			<div class="tm-bg-primary-dark tm-block">
-				<h2 class="tm-block-title">Grafik Penjualan</h2>
-				<canvas id="transaksi" style="width:100%;max-width:600px"></canvas>
-			</div>
-		</div>
-	</div>
-	<!-- content-wrapper ends -->
+
+			<!-- /.row -->
+			<!-- Main row -->
+
+			<!-- /.row (main row) -->
+		</div><!-- /.container-fluid -->
+	</section>
+	<!-- /.content -->
+</div>

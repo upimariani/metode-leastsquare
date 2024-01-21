@@ -1,37 +1,50 @@
-<div class="main-panel">
-	<div class="content-wrapper">
-		<div class="page-header">
-			<h3 class="page-title"> Analisis Peramalan Penjualan Metode Least Square </h3>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+					<h1>Analisis Peramalan Penjualan Metode Least Square </h1>
 
-			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Tables</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Basic tables</li>
-				</ol>
-			</nav>
+				</div>
 
-		</div>
+				<div class="col-sm-6">
+					<ol class="breadcrumb float-sm-right">
+						<li class="breadcrumb-item"><a href="#">Home</a></li>
+						<li class="breadcrumb-item active">Analisis</li>
+					</ol>
+				</div>
+
+			</div>
+
+		</div><!-- /.container-fluid -->
+
 		<?php
 		if ($this->session->userdata('success')) {
 		?>
-			<div class="alert alert-success" role="alert">
-				<?= $this->session->userdata('success') ?>
+			<div class="callout callout-success">
+				<h5>Sukses!</h5>
+				<p><?= $this->session->userdata('success') ?></p>
 			</div>
 		<?php
 		}
 		?>
 
+	</section>
 
-
-		<div class="row">
-
-			<div class="col-lg-12 grid-margin stretch-card">
-				<div class="card">
-					<div class="card-body">
-						<h4 class="card-title">Informasi Analisis Penjualan Metode Least Square</h4>
-						</p>
-						<div class="table-responsive">
-							<table id="myTable" class="table table-light">
+	<!-- Main content -->
+	<section class="content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Informasi Akun User</h3>
+						</div>
+						<!-- /.card-header -->
+						<div class="card-body">
+							<table id="myTable" class="table">
 								<thead>
 									<tr>
 										<th> # </th>
@@ -58,10 +71,10 @@
 											<td><?= $value->hasil ?></td>
 
 											<td> <a href="<?= base_url('Admin/cAnalisis/delete/' . $value->id_penjualan) ?>" class="btn btn-danger btn-icon-text">
-													<i class="mdi mdi-close-octagon"></i>
+													Hapus
 												</a>
 												<a href="<?= base_url('Admin/cAnalisis/list_perhari/' . $value->periode . '/' . $value->periode_tahun) ?>" class="btn btn-warning btn-icon-text">
-													<i class="mdi mdi-autorenew"></i>
+													View
 												</a>
 											</td>
 										</tr>
@@ -74,9 +87,15 @@
 								</tbody>
 							</table>
 						</div>
+						<!-- /.card-body -->
 					</div>
+					<!-- /.card -->
 				</div>
+				<!-- /.col -->
 			</div>
-
+			<!-- /.row -->
 		</div>
-	</div>
+		<!-- /.container-fluid -->
+	</section>
+	<!-- /.content -->
+</div>
