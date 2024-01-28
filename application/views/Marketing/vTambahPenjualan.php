@@ -56,6 +56,11 @@
 									<input type="number" class="form-control" name="total" id="exampleInputPassword1" placeholder="Masukkan Total Penjualan">
 									<?= form_error('total', '<small class="text-danger">', '</small>'); ?>
 								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1">Nama Parker</label>
+									<input type="text" class="form-control" name="parker" id="exampleInputPassword1" placeholder="Masukkan Parker">
+									<?= form_error('parker', '<small class="text-danger">', '</small>'); ?>
+								</div>
 								<button type="submit" class="btn btn-primary mr-2">Save</button>
 							</form>
 						</div>

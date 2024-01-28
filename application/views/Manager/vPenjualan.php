@@ -37,10 +37,10 @@
 	<section class="content">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-6">
+				<div class="col-8">
 					<div class="card">
 						<div class="card-header">
-							<h3 class="card-title">Informasi Akun User</h3>
+							<h3 class="card-title">Informasi Penjualan</h3>
 						</div>
 						<!-- /.card-header -->
 						<div class="card-body">
@@ -50,6 +50,7 @@
 										<th> # </th>
 										<th> Periode Hari </th>
 										<th> Total Penjualan /kg </th>
+										<th> Nama Parker </th>
 									</tr>
 								</thead>
 								<tbody>
@@ -62,6 +63,7 @@
 											<td><?= $no++ ?></td>
 											<td><?= $value->periode_hari ?></td>
 											<td><?= $value->total ?></td>
+											<td><?= $value->parker ?></td>
 
 										</tr>
 									<?php

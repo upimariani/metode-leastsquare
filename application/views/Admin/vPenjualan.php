@@ -31,7 +31,7 @@
 			<div class="col-lg-12 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
-						<h4 class="card-title">Informasi Akun User</h4>
+						<h4 class="card-title">Informasi Penjualan</h4>
 						</p>
 						<div class="table-responsive">
 							<table class="table table-striped">

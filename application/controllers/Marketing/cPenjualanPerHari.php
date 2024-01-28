@@ -35,6 +35,7 @@ class cPenjualanPerHari extends CI_Controller
 
 		$this->form_validation->set_rules('date', 'Tanggal Penjualan', 'required');
 		$this->form_validation->set_rules('total', 'Total Penjualan', 'required');
+		$this->form_validation->set_rules('parker', 'Parker', 'required');
 
 
 		if ($this->form_validation->run() == FALSE) {
@@ -57,7 +58,8 @@ class cPenjualanPerHari extends CI_Controller
 				'periode_bulan' => $bln,
 				'periode_tahun' => $thn,
 				'total' => $this->input->post('total'),
-				'status' => '0'
+				'status' => '0',
+				'parker' => $this->input->post('parker')
 			);
 			$this->mPenjualan->insert($data);
 			$this->session->set_flashdata('success', 'Data Penjualan Per Hari Berhasil Disimpan!');
@@ -68,7 +70,7 @@ class cPenjualanPerHari extends CI_Controller
 	{
 		$this->form_validation->set_rules('date', 'Tanggal Penjualan', 'required');
 		$this->form_validation->set_rules('total', 'Total Penjualan', 'required');
-
+		$this->form_validation->set_rules('parker', 'Parker', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$data = array(
@@ -81,7 +83,8 @@ class cPenjualanPerHari extends CI_Controller
 		} else {
 			$data = array(
 				'periode_hari' => $this->input->post('date'),
-				'total' => $this->input->post('total')
+				'total' => $this->input->post('total'),
+				'parker' => $this->input->post('parker')
 			);
 			$this->mPenjualan->update($id, $data);
 			$this->session->set_flashdata('success', 'Data Penjualan Per Hari Berhasil Diperbaharui!');

@@ -32,7 +32,20 @@
 		<?php
 		}
 		?>
+		<?php
+		$ramalan = $this->db->query("SELECT * FROM `penjualan` WHERE tot_penjualan != 'NULL' ORDER BY id_penjualan DESC LIMIT 1")->row();
+		if ($ramalan->tot_penjualan < $ramalan->hasil) {
+			$status = 'User dapat menyiapkan stok ayam yang lebih banyak dikandang';
+		} else {
+			$status = 'User dapat menyiapkan stok ayam yang cukup dikandang';
+		}
 
+
+		?>
+		<div class="callout callout-success">
+			<h5>Informasi!</h5>
+			<p><?= $status ?></p>
+		</div>
 	</section>
 
 	<!-- Main content -->
@@ -42,18 +55,19 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							<h3 class="card-title">Informasi Akun User</h3>
+							<h3 class="card-title">Informasi Peramalan</h3>
 						</div>
 						<!-- /.card-header -->
 						<div class="card-body">
 							<table id="myTable" class="table">
 								<thead>
 									<tr>
-										<th> # </th>
-										<th> Bulan </th>
-										<th> Nilai a </th>
-										<th> Nilai b </th>
-										<th> Hasil Peramalan/kg </th>
+										<th># </th>
+										<th>Bulan </th>
+										<th>Total Penjualan Bulan Sebelumnya </th>
+										<th>Nilai a </th>
+										<th>Nilai b </th>
+										<th>Hasil Peramalan/kg </th>
 									</tr>
 								</thead>
 								<tbody>
@@ -65,17 +79,14 @@
 										<tr>
 											<td><?= $no++ ?></td>
 											<td><?= $value->bulan ?></td>
+											<td><?= $peramalan->tot_penjualan ?></td>
 											<td><?= $peramalan->nilai_a ?></td>
 											<td><?= $peramalan->nilai_b ?></td>
 											<td><?= $peramalan->hasil ?></td>
-
 										</tr>
 									<?php
 									}
 									?>
-
-
-
 								</tbody>
 							</table>
 						</div>
